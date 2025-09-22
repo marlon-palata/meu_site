@@ -1,0 +1,21 @@
+/*
+body{
+    background-image: url(../src/images/ferrari.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+    /*
+    background-color: #53dcdc;
+    
+}
+*/
+h1{
+    color: #fc0301;
+    background-image: url(../src/images/ferrari.jpg);
+}
+
+p{
+    color: yellow;
+}
