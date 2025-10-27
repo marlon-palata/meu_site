@@ -1,0 +1,25 @@
+/* Estilo base para os botões */
+.botao {
+    background-color: blue;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.botao:hover {
+    background-color: darkblue;
+    cursor: pointer; /* Muda o cursor para indicar interatividade */
+}
+
+/* Estilo para o primeiro item de QUALQUER lista ul */
+ul li:first-child {
+    font-weight: bold;
+    color: green;
+}
+
+/* Estilo para itens pares da lista específica */
+.lista-efeitos li:nth-child(even) {
+    background-color: #f0f0f0;
+}
