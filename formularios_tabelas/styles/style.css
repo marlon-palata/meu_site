@@ -1,73 +1,142 @@
-
-table{
-    border: 1px solid black; 
-    background-color: orange;
-    width: 500px;
-    border-spacing: 3px; 
-    margin-left: auto; 
-    margin-right: auto;
+:root {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #4b7bec;
+  --muted: #6b7280;
+  --radius: 10px;
+  --gap: 14px;
+  --max: 900px;
+  --shadow: 0 6px 18px rgba(11, 22, 39, 0.06);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font);
+  background: linear-gradient(180deg, #eef2ff 0, #f4f7fb 100%);
+  color: #0b1327;
+  margin: 0;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  max-width: var(--max);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+h1 {
+  margin: 0 0 12px 0;
+  color: var(--accent);
+}
+.form .field {
+  margin-bottom: var(--gap);
+  display: flex;
+  flex-direction: column;
+}
+.field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="number"],
+.field input[type="date"],
+.field input[type="url"],
+.field select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e9ef;
+  background: #fff;
+  outline: none;
+}
+.field input[type="file"] {
+  padding: 6px 0;
+}
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.field.small {
+  flex: 1 1 150px;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+}
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: #eef2ff;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-block;
+}
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 6px 14px rgba(75, 123, 236, 0.16);
+}
+.btn.link {
+  background: transparent;
+  color: var(--muted);
+  border: 1px dashed #dbe5ff;
+}
+fieldset {
+  border: 1px solid #eef3ff;
+  padding: 12px;
+  border-radius: 8px;
+}
+legend {
+  font-weight: 600;
+}
+label input {
+  margin-right: 8px;
 }
 
-td{
-    border: 1px solid black;
-    padding: 10px;
-    background-image: url(../src/images/gatinho_rosa.jpg);
+/* estilos para a página de acessa_dados */
+.table-wrap {
+  overflow: auto;
+  margin-top: 14px;
 }
-
-th{
-    border: 1px solid black;
-    background-color: lightskyblue;
-    padding: 5px;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
 }
-
-div{
-    border: 1px solid black;
+th,
+td {
+  padding: 10px 8px;
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
 }
-
-div > div{
-    border: 2px solid black;
+th {
+  background: #f8fbff;
+  color: var(--muted);
+  font-weight: 700;
 }
-
-div > p{
-    color: blue;
+.empty {
+  color: var(--muted);
+  padding: 20px;
+  text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Pode fazer com herança */
-/*
-table > td{
-   padding: 10px; 
-   text-align: left; 
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
-
-th{
-    border: 1px solid black;
-}
-*/
-/* Pode fazer direto na tag TD */ 
-/*
-td{
-    border: 1px solid black;
-    padding: 10px; 
-    text-align: right;
-}
-
-label{
-    padding: 20px;
-}
-
-input{
-    margin: 20px;
-}
-    */

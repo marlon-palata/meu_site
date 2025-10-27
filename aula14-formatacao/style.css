@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Estilos gerais para o corpo */
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+p {
+  /* O navegador tentará usar a 'Roboto'. Se não encontrar, tentará a 'Helvetica', depois a 'Arial', e por fim, qualquer fonte sem serifa disponível. */
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2.5em; /* 2.5 vezes o tamanho da fonte base do body */
+  color: #2c3e50;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #34495e;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+
+/* Parágrafo de destaque */
+.paragrafo-destaque {
+  font-family: "Times New Roman", serif;
+  font-size: 1.1em;
+  color: #6a0572; /* Um tom de roxo */
+  font-weight: bold;
+  text-align: justify;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-left: 5px solid #6a0572;
+}
+
+.texto-pequeno {
+  font-size: 0.8em;
+  color: #777;
+}
+
+.texto-italico {
+  font-style: italic;
+  color: #555;
+}
+
+/* Imagens */
+img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse a largura do pai */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block; /* Para poder aplicar margens automáticas e float */
+  margin: 20px auto; /* Centraliza a imagem no container */
+}
+
+.imagem-bonita {
+  border: 5px solid #f0ad4e; /* Borda laranja */
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  padding: 5px; /* Espaço entre a imagem e a borda */
+}
+
+.imagem-redonda {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Faz a imagem ficar redonda */
+  object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+  border: 3px solid #5cb85c; /* Borda verde */
+  margin-bottom: 30px;
+}
+
+/* Listas */
+ul {
+  list-style-type: square; /* Marcadores quadrados */
+  margin-left: 20px;
+  padding: 0;
+}
+
+ul li {
+  background-color: #e0f7fa; /* Fundo azul claro para cada item */
+  margin-bottom: 8px;
+  padding: 8px;
+  border-left: 4px solid #00bcd4; /* Borda de destaque */
+}
+
+ol {
+  list-style-type: upper-roman; /* Marcadores em números romanos maiúsculos */
+  margin-left: 25px;
+  padding: 0;
+}
+
+ol li {
+  font-weight: bold;
+  color: #4a148c; /* Roxo escuro */
+  margin-bottom: 5px;
+}
+
+/* Tabelas */
+.tabela-estilizada {
+  width: 80%; /* Ocupa 80% da largura do pai */
+  border-collapse: collapse; /* Bordas unidas */
+  margin: 25px auto; /* Centraliza a tabela */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.tabela-estilizada th,
+.tabela-estilizada td {
+  border: 1px solid #ddd; /* Borda fina e cinza para células */
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.tabela-estilizada thead th {
+  background-color: #4caf50; /* Verde escuro para o cabeçalho */
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Estilo para linhas alternadas (zebra stripes) */
+.tabela-estilizada tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Cinza claro para linhas pares */
+}
+
+/* Efeito hover nas linhas */
+.tabela-estilizada tbody tr:hover {
+  background-color: #ddd; /* Fundo mais escuro ao passar o mouse */
+  cursor: pointer;
+}
+
+/* Links */
+a {
+  color: #007bff; /* Azul padrão */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  transition: color 0.3s ease; /* Transição suave da cor */
+}
+
+a:hover {
+  color: #0056b3; /* Azul mais escuro ao passar o mouse */
+  text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+a:visited {
+  color: #6610f2; /* Roxo para links visitados */
+}
+
+a:active {
+  color: #dc3545; /* Vermelho ao clicar */
+}
+
+/* Exemplo de link como botão */
+.link-menu {
+  background-color: #28a745; /* Verde */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block; /* Permite aplicar padding/margin vertical */
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.link-menu:hover {
+  background-color: #218838; /* Verde mais escuro no hover */
+  text-decoration: none;
+}
+
+.imagem-post {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem; /* Usa rem para espaçamento consistente */
+  border-radius: 8px; /* Cantos suavemente arredondados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  list-style-type: none; /* Remove os marcadores padrão */
+  padding-left: 0;
+}
+ul li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee; /* Linha separadora entre os itens */
+}
+ol {
+  list-style-type: decimal-leading-zero; /* 01, 02, 03... */
+  padding-left: 2rem;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+th, td {
+    padding: 0.75rem; /* Usa rem para espaçamento */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+/* Adicione esta regra ao CSS da tabela anterior */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Um cinza muito claro para as linhas pares */
+}

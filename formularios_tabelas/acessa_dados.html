@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cadastros</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Registros enviados</h1>
+      <p class="muted">
+        Últimos envios aparecem primeiro. Atualize para recarregar.
+      </p>
+
+      <div id="content" class="table-wrap">
+        <div class="empty">Carregando...</div>
+      </div>
+
+      <div class="actions" style="margin-top: 18px">
+        <a class="btn" href="/formularios.html">Voltar ao formulário</a>
+        <button class="btn" id="refresh">Atualizar</button>
+      </div>
+    </main>
+
+    <script>
+      async function load() {
+        const el = document.getElementById("content");
+        el.innerHTML = '<div class="empty">Carregando...</div>';
+        try {
+          const res = await fetch("/api/submissions");
+          const data = await res.json();
+          if (!data.length) {
+            el.innerHTML = '<div class="empty">Nenhum cadastro ainda.</div>';
+            return;
+          }
+          // cria tabela
+          const rows = data
+            .slice()
+            .reverse()
+            .map((item) => {
+              const fields = item.fields || {};
+              const tecnologias = Array.isArray(fields.tecnologias)
+                ? fields.tecnologias.join(", ")
+                : fields.tecnologias || "";
+              const file = item.file
+                ? item.file.originalname +
+                  " (" +
+                  Math.round(item.file.size / 1024) +
+                  " KB)"
+                : "";
+              return `<tr>
+              <td>${item.id}</td>
+              <td>${item.timestamp}</td>
+              <td>${escapeHtml(fields.nome || "")}</td>
+              <td>${escapeHtml(fields.email || "")}</td>
+              <td>${escapeHtml(fields.estado || "")}</td>
+              <td>${escapeHtml(tecnologias)}</td>
+              <td>${escapeHtml(file)}</td>
+            </tr>`;
+            })
+            .join("");
+          el.innerHTML = `<table>
+            <thead><tr><th>ID</th><th>Data</th><th>Nome</th><th>Email</th><th>Estado</th><th>Tecnologias</th><th>Arquivo</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>`;
+        } catch (e) {
+          el.innerHTML = '<div class="empty">Erro ao carregar os dados.</div>';
+        }
+      }
+      function escapeHtml(s) {
+        return String(s).replace(
+          /[&<>"']/g,
+          (c) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            }[c])
+        );
+      }
+      document.getElementById("refresh").addEventListener("click", load);
+      load();
+    </script>
+  </body>
+</html>
