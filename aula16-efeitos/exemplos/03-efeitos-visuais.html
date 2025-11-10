@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Efeitos Visuais</title>
+    <style>
+        .caixa {
+            width: 150px;
+            height: 150px;
+            margin: 30px;
+            display: inline-block;
+            color: white;
+            padding: 10px;
+            font-family: sans-serif;
+        }
+
+        /* Border-radius */
+        .caixa-radius {
+            background-color: #3498db;
+            border-radius: 20px 0 20px 0; /* Topo-esq, Topo-dir, Baixo-dir, Baixo-esq */
+        }
+        
+        /* Opacity */
+        .caixa-opacity {
+            background-color: #e74c3c;
+            opacity: 0.7; /* Meio transparente */
+            transition: opacity 0.3s;
+        }
+        .caixa-opacity:hover {
+            opacity: 1.0; /* Totalmente opaco */
+        }
+        
+        /* Gradient */
+        .caixa-gradient {
+            /* Gradiente linear de cima para baixo */
+            background: linear-gradient(#8e44ad, #9b59b6);
+            transition: transform 0.3s;
+        }
+        .caixa-gradient:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="caixa caixa-radius">Border-Radius</div>
+    <div class="caixa caixa-opacity">Opacity (Hover)</div>
+    <div class="caixa caixa-gradient">Gradient (Hover)</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Box Sizing</title>
+    <style>
+        .caixa {
+            width: 300px; /* Largura desejada */
+            height: 100px;
+            padding: 20px;
+            border: 10px solid #c0392b;
+            margin-bottom: 20px;
+            background-color: #fADBD8;
+        }
+
+        /* Padrão do Navegador (Ruim) */
+        .content-box {
+            box-sizing: content-box;
+            /* Largura total = 300 (width) + 40 (padding) + 20 (border) = 360px */
+        }
+
+        /* Modo Profissional (Bom) */
+        .border-box {
+            box-sizing: border-box;
+            /* Largura total = 300px. O navegador ajusta o conteúdo interno. */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Comparando Box-Sizing</h1>
+
+    <h2>box-sizing: content-box (Padrão)</h2>
+    <p>A largura total é 360px (300 + 20 + 20 + 10 + 10)</p>
+    <div class="caixa content-box">Eu pedi 300px, mas tenho 360px!</div>
+
+    <h2>box-sizing: border-box (O Correto)</h2>
+    <p>A largura total é 300px.</p>

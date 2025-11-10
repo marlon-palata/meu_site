@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Animation (Keyframes)</title>
+    <style>
+        /* 1. Definindo a animação */
+        @keyframes pulsar {
+            0% {
+                transform: scale(1);
+                background-color: #1abc9c;
+            }
+            50% {
+                transform: scale(1.2);
+                background-color: #16a085;
+            }
+            100% {
+                transform: scale(1);
+                background-color: #1abc9c;
+            }
+        }
+        
+        .caixa-animada {
+            width: 150px;
+            height: 150px;
+            margin: 50px;
+            
+            /* 2. Aplicando a animação */
+            /* nome | duração | repetição */
+            animation: pulsar 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="caixa-animada"></div>
+
+</body>
+</html>

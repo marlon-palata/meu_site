@@ -1,0 +1,12 @@
+/* Exemplos de sintaxe de cores */
+
+.titulo-hex {
+    /* Formato Hexadecimal (#RRGGBB) */
+    color: #DC143C; /* Vermelho carmesim */
+}
+
+.fundo-rgb {
+    /* Formato RGB (Red, Green, Blue) */
+    background-color: rgb(240, 248, 255); /* Azul "Alice" */
+    color: rgb(0, 0, 0); /* Preto */
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Pseudo-classes e Pseudo-elementos</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        
+        /* Pseudo-classe :hover */
+        .botao-hover {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .botao-hover:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Pseudo-classe :nth-child */
+        ul { margin-top: 20px; }
+        ul li:nth-child(even) { /* Filhos pares (2, 4, 6...) */
+            background-color: #f0f0f0;
+        }
+        ul li:first-child { /* Primeiro filho */
+            font-weight: bold;
+        }
+
+        /* Pseudo-elemento ::first-letter */
+        .paragrafo-decorado::first-letter {
+            font-size: 3em;
+            color: #c0392b;
+            float: left;
+            margin-right: 5px;
+        }
+
+        /* Pseudo-elemento ::before */
+        .paragrafo-decorado::before {
+            content: "✨ ";
+        }
+
+        /* Pseudo-elemento ::selection */
+        ::selection {
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="botao-hover">Passe o mouse em mim</button>
+    
+    <ul>
+        <li>Item 1 (Ímpar)</li>
+        <li>Item 2 (Par)</li>
+        <li>Item 3 (Ímpar)</li>
+        <li>Item 4 (Par)</li>
+    </ul>
+
+    <p class="paragrafo-decorado">Este parágrafo usa pseudo-elementos para estilizar a primeira letra e adicionar conteúdo antes do texto. Tente também selecionar este texto.</p>
+
+</body>
+</html>

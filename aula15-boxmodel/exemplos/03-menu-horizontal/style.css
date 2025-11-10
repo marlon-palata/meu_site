@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box; /* Boa prática */
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.menu-simples ul {
+    /* 1. Resetar estilos da lista */
+    list-style: none; /* Remove marcadores */
+    margin: 0;
+    padding: 0;
+    
+    /* 2. Estilo da barra */
+    background-color: #333;
+    text-align: center; /* Centraliza os <li> */
+}
+
+.menu-simples li {
+    /* 3. Colocar itens lado a lado */
+    display: inline-block;
+}
+
+.menu-simples li a {
+    /* 4. Criar o "botão" (Box Model) */
+    display: block; /* Essencial para o padding funcionar */
+    padding: 1rem; /* 16px de espaçamento interno */
+    
+    /* 5. Estilo visual */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-simples li a:hover {
+    background-color: #555;
+}

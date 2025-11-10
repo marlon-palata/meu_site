@@ -1,0 +1,127 @@
+/* 1. Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.container-botoes, .container-cards {
+    margin-bottom: 40px;
+}
+
+/* 2. Botão Efeito (Transition) */
+.botao-efeito {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+    
+    /* A mágica da transição */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.botao-efeito:hover {
+    background-color: #004a99;
+    color: #f0f0f0;
+}
+
+/* 3. Botão Transformar (Transform) */
+.botao-transformar {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    
+    /* Transição para a transformação */
+    transition: transform 0.2s ease-out;
+}
+
+.botao-transformar:hover {
+    /* Aumenta 10% */
+    transform: scale(1.1);
+}
+
+.botao-transformar:active {
+    /* Diminui 5% (simula clique) */
+    transform: scale(0.95);
+}
+
+/* 4. Cards (Transform, Transition, Box-Shadow) */
+.container-cards {
+    display: flex; /* Bônus: alinha os cards lado a lado */
+    justify-content: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 250px;
+    text-align: left;
+    
+    /* Transição para sombra e transformação */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    /* Move o card 5px para cima */
+    transform: translateY(-5px);
+}
+
+/* 5. Card Animado (Animation) */
+@keyframes tremor {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.card-animado {
+    /* nome | duração | tipo | repetição */
+    animation: tremor 0.5s linear infinite;
+}
+
+/* 6. Parágrafo Decorado (Pseudo-elementos) */
+.paragrafo-decorado {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 30px;
+    padding: 10px;
+    background: #fffbe6;
+    border-left: 5px solid #ffc107;
+}
+
+.paragrafo-decorado::before {
+    content: "🔔 Atenção: ";
+    font-weight: bold;
+    color: #d39e00;
+}
+
+.paragrafo-decorado::after {
+    content: " 🔔";
+    font-weight: bold;
+    color: #d39e00;
+}

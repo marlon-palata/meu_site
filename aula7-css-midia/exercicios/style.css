@@ -1,0 +1,50 @@
+/* Passo 1: Estilizando o Body e Parágrafos */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    color: #333333;
+}
+
+/* Passo 2 e 3: Banner no Título */
+h1 {
+    color: white; /* Texto branco */
+    background-image: url("fundo_hobby.jpg"); /* Imagem de fundo */
+    
+    /* Passo 3: Ajustes do Fundo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Bônus: Espaçamento para o título respirar */
+    padding: 50px 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra no texto */
+}
+
+h2 {
+    color: #2c3e50; /* Azul escuro */
+}
+
+/* Passo 4: Estilizando a Imagem de Perfil */
+img {
+    width: 150px;
+    
+    /* Bônus: Deixando redonda e centralizada */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 20px auto;
+    border: 3px solid #2c3e50;
+}
+
+/* Passo 5: Vídeo Responsivo */
+video {
+    width: 100%; /* Ocupa 100% da largura do contêiner */
+    max-width: 700px; /* Limite máximo */
+    display: block;
+    margin: 20px auto; /* Centraliza */
+}

@@ -1,0 +1,186 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define 1rem = 10px (para facilitar o cálculo)
+Padrão do navegador é 16px. 10px / 16px = 62.5%
+*/
+html {
+    font-size: 62.5%;
+}
+
+/* Estilos Globais */
+body {
+    /* Fonte "Lora" (serif) para parágrafos */
+    font-family: 'Lora', serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    /* Define o tamanho base do texto para 1.6rem (16px) */
+    font-size: 1.6rem; 
+}
+
+/* Títulos usarão "Montserrat" */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header h1 {
+    font-size: 4rem; /* 40px */
+    color: white;
+}
+
+/* Navegação */
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem; /* 14px */
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #1abc9c; /* Verde-água no hover */
+}
+
+/* Conteúdo Principal */
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Artigos (Posts) */
+.post {
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post h3 {
+    font-size: 2.4rem; /* 24px */
+}
+
+/* Imagens dentro dos posts (Desafio: Redonda) */
+.imagem-post {
+    width: 200px; /* Tamanho fixo para círculo */
+    height: 200px; /* Tamanho fixo para círculo */
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    object-fit: cover;
+    margin: 1rem auto;
+    display: block;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Lista Ordenada (Desafio: Romana) */
+.post ol {
+    list-style-type: upper-roman; /* Números romanos */
+    margin-left: 3rem;
+}
+
+.post ol li {
+    margin-bottom: 0.5rem;
+}
+
+/* Palavras-chave (Spans) */
+.post p span {
+    background-color: #e0e7ee;
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    font-size: 1.2rem; /* 12px */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Links "Ler Mais" (Botão) */
+.ler-mais {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.ler-mais:hover {
+    background-color: #218838;
+}
+
+/* Seção de Contato */
+#contato {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#contato label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#contato input[type="text"],
+#contato input[type="email"] {
+    width: 80%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.4rem;
+}
+
+#contato button {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    font-size: 1.4rem; /* 14px */
+}

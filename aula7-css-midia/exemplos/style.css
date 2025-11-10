@@ -1,0 +1,19 @@
+.corpo-com-fundo {
+    background-color: #f0f0f0;
+}
+
+.titulo-cor {
+    color: #0056b3; /* Azul escuro */
+}
+
+.banner-fundo {
+    /* Imagem de Fundo (CSS) */
+    background-image: url("img/fundo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    color: white; /* Texto branco para contraste */
+    padding: 40px;
+    text-shadow: 2px 2px 4px #000; /* Sombra no texto */
+}

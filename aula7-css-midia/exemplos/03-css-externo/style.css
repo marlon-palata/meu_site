@@ -1,0 +1,11 @@
+/* Este é o arquivo style.css */
+
+h1 {
+    color: red;
+    font-family: 'Courier New', monospace;
+}
+
+p {
+    background-color: yellow;
+    font-size: 20px;
+}

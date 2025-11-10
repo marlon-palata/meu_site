@@ -1,0 +1,61 @@
+/* === ARQUIVO PARA 01-seletores-basicos.html === */
+
+/* 1. Seletor de Tag */
+h1 {
+    color: blue;
+}
+
+/* 2. Seletor de Classe */
+.destaque {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* 3. Seletor de ID */
+#paragrafo-unico {
+    border: 2px solid red;
+    font-size: 20px;
+}
+
+
+/* === ARQUIVO PARA 02-combinadores.html === */
+
+/* 1. Descendente (espaço) */
+article p {
+    color: green;
+}
+
+/* 2. Filho Direto (>) */
+#filho-direto > p {
+    color: purple;
+}
+
+/* 3. Irmão Adjacente (+) */
+h2 + p {
+    font-weight: bold;
+}
+
+/* 4. Irmão Geral (~) */
+h3 ~ p {
+    color: gray;
+}
+
+
+/* === ARQUIVO PARA 03-precedencia.html === */
+
+/* 4. Tag (Especificidade mais baixa) */
+p {
+    color: blue;
+}
+
+/* 3. Classe (Média especificidade) */
+.comum {
+    color: green;
+}
+
+/* 2. ID (Alta especificidade) */
+#unico {
+    color: red;
+}
+
+/* 1. Inline (style="color: brown;") - VENCE TODOS */

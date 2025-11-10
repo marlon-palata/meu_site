@@ -1,0 +1,136 @@
+/* Método 2: Importando Google Fonts via @import (Menos recomendado) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* === ARQUIVO PARA 01-formatacao-texto-fontes.html === */
+
+.titulo-roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.paragrafo-lora {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.pixels {
+    font-size: 20px; /* Fixo */
+}
+
+.ems {
+    font-size: 1.2em; /* Relativo ao pai (20px) = 24px */
+}
+
+.rems {
+    font-size: 1.5rem; /* Relativo à raiz (16px) = 24px */
+}
+
+.alinhado-justificado {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.transformado {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* === ARQUIVO PARA 02-formatacao-links-listas.html === */
+
+a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+}
+
+a:link {
+    color: #007bff;
+}
+
+a:visited, .visitado {
+    color: #6a0572;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+a:active {
+    color: red;
+}
+
+.botao-link {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.botao-link:hover {
+    background-color: #218838;
+    color: white;
+    text-decoration: none;
+}
+
+/* Listas */
+.lista-quadrada {
+    list-style-type: square;
+}
+
+.lista-sem-marcador {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.lista-romana {
+    list-style-type: upper-roman;
+}
+
+/* === ARQUIVO PARA 03-formatacao-imagens-tabelas.html === */
+
+.img-responsiva {
+    max-width: 100%; /* Mais importante para imagens */
+    height: auto;
+    border: 3px solid #ccc;
+    padding: 5px;
+}
+
+.img-redonda {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Faz a imagem redonda */
+    object-fit: cover; /* Evita distorção */
+    border: 5px solid #5cb85c;
+}
+
+/* Tabelas */
+.tabela-zebra {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.tabela-zebra th,
+.tabela-zebra td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela-zebra thead th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Zebra Stripes */
+.tabela-zebra tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabela-zebra tbody tr:hover {
+    background-color: #ddd;
+}

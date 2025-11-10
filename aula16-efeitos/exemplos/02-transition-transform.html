@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Transition e Transform</title>
+    <style>
+        .caixa {
+            width: 150px;
+            height: 150px;
+            background-color: #2ecc71;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px;
+        }
+        
+        /* Transition */
+        .caixa-transicao {
+            /* Define a transição (all = todas as propriedades) */
+            transition: all 0.5s ease;
+        }
+        .caixa-transicao:hover {
+            background-color: #27ae60;
+            border-radius: 50%; /* Fica redondo */
+        }
+        
+        /* Transform */
+        .caixa-transform {
+            transition: transform 0.5s ease-out;
+        }
+        .caixa-transform:hover {
+            /* Combina transformações */
+            transform: rotate(180deg) scale(1.2) translate(20px, 0px);
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Exemplo de Transition</h2>
+    <div class="caixa caixa-transicao">Passe o mouse</div>
+    
+    <h2>Exemplo de Transform</h2>
+    <div class="caixa caixa-transform">Passe o mouse</div>
+
+</body>
+</html>

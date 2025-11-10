@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Layout Semântico</title>
+    <style>
+        body { font-family: sans-serif; }
+        div { border: 2px dashed red; padding: 10px; margin: 5px; }
+        header, nav, main, aside, footer { 
+            border: 2px solid green; 
+            padding: 10px; 
+            margin: 5px;
+            display: block; /* Garante que o navegador trate como bloco */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Comparação: Antiga vs. Moderna</h1>
+
+    <h2>Estrutura Antiga ("Sopa de divs")</h2>
+    <div id="wrapper">
+        <div id="header">
+            <p>div id="header" (Cabeçalho)</p>
+        </div>
+        <div id="nav">
+            <p>div id="nav" (Navegação)</p>
+        </div>
+        <div id="main">
+            <p>div id="main" (Conteúdo principal)</p>
+        </div>
+        <div id="sidebar">
+            <p>div id="sidebar" (Barra lateral)</p>
+        </div>
+        <div id="footer">
+            <p>div id="footer" (Rodapé)</p>
+        </div>
+    </div>
+    
+    <hr>
+
+    <h2>Estrutura Moderna (HTML5 Semântico)</h2>
+    <div>
+        <header>
+            <p>&lt;header&gt; - Título do site e logo.</p>
+            <nav>
+                <p>&lt;nav&gt; - Menu principal de navegação.</p>
+            </nav>
+        </header>
+        
+        <main>
+            <p>&lt;main&gt; - Conteúdo principal e único desta página.</p>
+        </main>
+        
+        <aside>
+            <p>&lt;aside&gt; - Conteúdo lateral, como links ou publicidade.</p>
+        </aside>
+
+        <footer>
+            <p>&lt;footer&gt; - Informações de copyright e contatos.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

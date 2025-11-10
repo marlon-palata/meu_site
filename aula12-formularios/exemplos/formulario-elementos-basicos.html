@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Exemplo Elementos de Formulário</title>
+</head>
+<body>
+    <h1>Elementos de Formulário</h1>
+    
+    <form action="#" method="POST">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome_usuario">
+        </div>
+        
+        <br>
+        
+        <div>
+            <p>Turno:</p>
+            <input type="radio" id="manha" name="turno" value="m">
+            <label for="manha">Manhã</label>
+            
+            <input type="radio" id="tarde" name="turno" value="t">
+            <label for="tarde">Tarde</label>
+        </div>
+        
+        <br>
+        
+        <div>
+            <p>Interesses:</p>
+            <input type="checkbox" id="html" name="interesses" value="html">
+            <label for="html">HTML</label>
+            
+            <input type="checkbox" id="css" name="interesses" value="css">
+            <label for="css">CSS</label>
+        </div>
+        
+        <br>
+        
+        <div>
+            <label for="cidade">Cidade:</label>
+            <select id="cidade" name="cidade_origem">
+                <option value="">Selecione...</option>
+                <option value="sp">São Paulo</option>
+                <option value="rj">Rio de Janeiro</option>
+                <option value="mg">Minas Gerais</option>
+            </select>
+        </div>
+        
+        <br>
+        
+        <div>
+            <label for="msg">Mensagem:</label><br>
+            <textarea id="msg" name="mensagem_usuario" rows="5" cols="40"></textarea>
+        </div>
+        
+        <br>
+        
+        <div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+        </div>
+    </form>
+</body>
+</html>

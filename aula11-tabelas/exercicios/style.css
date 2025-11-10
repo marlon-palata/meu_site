@@ -1,0 +1,45 @@
+/* Estilo para a Tabela de Horário */
+
+table {
+  width: 90%;
+  margin: 20px auto; /* Centraliza a tabela */
+  border-collapse: collapse; /* Une as bordas */
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Cabeçalho principal da tabela */
+th {
+  background-color: #f2f2f2;
+}
+
+/* Cabeçalhos dos horários (coluna da esquerda) */
+.celula-horario {
+  background-color: #f9f9f9;
+  text-align: left;
+  font-weight: bold;
+}
+
+.cabecalho-horario {
+   background-color: #f2f2f2;
+   text-align: left;
+}
+
+/* Célula do Recreio */
+.recreio {
+  background-color: #fff2cc;
+  font-weight: bold;
+  color: #a67c00;
+}
+
+/* Célula de Aula Dupla */
+.aula-dupla {
+  background-color: #cfe2f3;
+  vertical-align: middle; /* Centraliza o texto verticalmente */
+}
