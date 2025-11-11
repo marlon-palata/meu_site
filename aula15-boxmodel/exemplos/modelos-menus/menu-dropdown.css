@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base do Menu (igual aos outros) */
+.menu-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.menu-dropdown li {
+    display: inline-block;
+    /* 2. O item PAI do submenu precisa de position: relative */
+    position: relative; 
+}
+
+.menu-dropdown li a {
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.menu-dropdown li a:hover {
+    background-color: #555;
+}
+
+/* --- A MÁGICA DO SUBMENU --- */
+
+/* 3. Estilo do submenu (a <ul> aninhada) */
+.menu-dropdown .submenu {
+    display: none; /* 4. Esconda o submenu por padrão */
+    position: absolute; /* 5. Faz o submenu "flutuar" */
+    background-color: #555;
+    min-width: 160px; /* Largura mínima para o dropdown */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1; /* Garante que fique na frente de outros conteúdos */
+}
+
+/* 7. Estilo dos itens do submenu (agora verticais) */
+.menu-dropdown .submenu li {
+    display: block; /* Faz os itens ficarem um em cima do outro */
+}
+
+/* 6. A Regra Principal: Mostrar o submenu no :hover do <li> PAI */
+.menu-dropdown li:hover > .submenu {
+    display: block;
+}

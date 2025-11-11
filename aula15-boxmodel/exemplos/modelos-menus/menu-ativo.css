@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu-ativo ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1; /* Fundo cinza claro */
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-ativo li {
+    display: inline-block;
+}
+
+.menu-ativo li a {
+    display: block;
+    color: #555; /* Cor de texto escura */
+    padding: 16px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para o hover (qualquer item) */
+.menu-ativo li a:hover {
+    background-color: #ddd; /* Fica cinza mais escuro no hover */
+}
+
+/* ESTA É A MÁGICA:
+   Estilo que SÓ se aplica ao <li> com a classe ".ativo".
+   Ele sobrescreve o estilo normal.
+*/
+.menu-ativo li.ativo a {
+    background-color: #007bff; /* Fundo azul (pode ser a cor principal do site) */
+    color: white; /* Texto branco */
+}

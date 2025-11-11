@@ -1,0 +1,41 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu-separador ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #34495e; /* Azul escuro */
+    border-radius: 8px; /* Cantos levemente arredondados para o menu todo */
+    overflow: hidden; /* Garante que o border-radius funcione */
+    display: table; /* Ajuda a centralizar e evitar espaços */
+    width: auto;
+    margin: 20px auto; /* Centraliza o menu na página */
+}
+
+.menu-separador li {
+    display: inline-block;
+    position: relative;
+}
+
+.menu-separador li a {
+    display: block;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-separador li a:hover {
+    background-color: #2c3e50; /* Um pouco mais escuro ao passar o mouse */
+    color: #ecf0f1; /* Cor de texto mais clara ao passar o mouse */
+}
+
+/* Adiciona um separador vertical entre os itens */
+.menu-separador li:not(:last-child) { /* Aplica em todos MENOS no último item */
+    border-right: 1px solid #556c86; /* Linha sutil à direita */
+}

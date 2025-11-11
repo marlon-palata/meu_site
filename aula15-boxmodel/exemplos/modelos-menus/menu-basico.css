@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding/borda não aumentem a largura total */
+}
+
+/* Estilos para o menu */
+.menu-horizontal-basico ul {
+    list-style: none; /* Remove os marcadores de lista */
+    margin: 0;
+    padding: 0;
+    background-color: #4CAF50; /* Fundo verde */
+    text-align: center; /* Centraliza os itens do menu */
+}
+
+.menu-horizontal-basico li {
+    display: inline-block; /* Coloca os itens da lista lado a lado */
+    position: relative; /* Para futuros submenus, se precisar */
+}
+
+.menu-horizontal-basico li a {
+    display: block; /* Faz o link ocupar toda a área do item */
+    color: white; /* Cor do texto */
+    text-align: center;
+    padding: 14px 16px; /* Espaçamento interno dos itens (botões) */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.menu-horizontal-basico li a:hover {
+    background-color: #45a049; /* Cor mais escura ao passar o mouse */
+}

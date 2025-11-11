@@ -1,0 +1,38 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+}
+
+.menu-efeitos ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Fundo bem escuro */
+    text-align: center;
+}
+
+.menu-efeitos li {
+    display: inline-block;
+    position: relative;
+    padding: 0; /* Remover padding aqui e colocar no link */
+}
+
+.menu-efeitos li a {
+    display: block;
+    color: #e0e0e0; /* Cinza claro */
+    padding: 15px 25px;
+    text-decoration: none;
+    opacity: 0.8; /* Inicia um pouco transparente */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição para opacidade E transformação */
+    transform: scale(1); /* Estado inicial da escala */
+}
+
+.menu-efeitos li a:hover {
+    opacity: 1; /* Fica totalmente opaco ao passar o mouse */
+    background-color: #333; /* Fundo um pouco mais claro */
+    transform: scale(1.05); /* Cresce ligeiramente o texto */
+    color: white; /* Garante que a cor do texto fique branca */
+}
