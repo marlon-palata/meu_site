@@ -1,0 +1,94 @@
+/* Reset básico para limpar margens */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: sans-serif;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+/* === O CONTAINER (PAI) === 
+   POR QUE 'position: relative'?
+   
+   1. Sem essa linha, qualquer filho com 'position: absolute' iria se posicionar
+      em relação à janela do navegador (body), e não em relação a este cartão.
+   
+   2. O 'relative' aqui cria um "Contexto de Posicionamento". Ele diz:
+      "Qualquer filho absoluto dentro de mim deve usar as MINHAS bordas como limite."
+      
+   3. Note que 'relative' sozinho não muda a aparência do cartão, ele continua
+      seguindo o fluxo normal da página. Sua função aqui é apenas servir de âncora.
+*/
+.card-produto {
+    position: relative; /* <--- A MÁGICA ACONTECE AQUI */
+    
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Garante que nada saia das bordas arredondadas */
+    margin: 0 auto; /* Centraliza na tela */
+}
+
+/* Estilo básico da imagem (ocupa toda a largura do card) */
+.card-produto img {
+    width: 100%;
+    display: block;
+}
+
+/* === O ELEMENTO FLUTUANTE (FILHO) === 
+   POR QUE 'position: absolute'?
+   
+   1. Queremos que esta etiqueta fique EM CIMA da imagem. Se fosse 'static' (padrão),
+      ela empurraria a imagem para baixo ou ficaria presa no texto.
+      
+   2. O 'absolute' REMOVE o elemento do fluxo normal. Os outros elementos (img, h3)
+      agem como se a etiqueta nem existisse, ocupando o espaço dela.
+      
+   3. Agora podemos usar coordenadas (top, right) para fixá-la onde quisermos.
+*/
+.etiqueta-oferta {
+    position: absolute; /* <--- SAI DO FLUXO E FLUTUA */
+    
+    /* COORDENADAS:
+       Como o pai é 'relative', 'top: 10px' significa "10px abaixo do topo do PAI".
+       E 'right: 10px' significa "10px à esquerda da borda direita do PAI".
+    */
+    top: 10px;
+    right: 10px;
+    
+    background-color: #e74c3c; /* Vermelho destaque */
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    
+    /* Z-INDEX:
+       Garante que a etiqueta fique NA FRENTE da imagem e de outros elementos.
+       Quanto maior o número, mais "perto" do usuário (mais no topo da pilha).
+    */
+    z-index: 10;
+}
+
+/* Estilos cosméticos para o texto */
+.conteudo {
+    padding: 15px;
+}
+
+.conteudo h3 { margin-bottom: 10px; color: #333; }
+.conteudo p { color: #666; font-size: 0.9rem; margin-bottom: 15px; }
+
+.conteudo button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.conteudo button:hover {
+    background-color: #2980b9;
+}
