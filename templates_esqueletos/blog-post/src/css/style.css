@@ -1,0 +1,80 @@
+/* Reset básico para remover margens padrão do navegador */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.site-header {
+    background-color: #2c3e50; /* Azul escuro */
+    color: white;
+    padding: 1rem 2rem;
+    /* Flexbox para alinhar Logo na esquerda e Menu na direita */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.logo {
+    font-size: 1.5rem; /* rem: Unidade relativa ao tamanho da fonte raiz */
+    font-weight: bold;
+    letter-spacing: 2px; /* Espaçamento entre letras */
+}
+
+.menu-lista {
+    list-style: none; /* Tira as bolinhas da lista */
+    display: flex; /* Coloca os itens do menu lado a lado */
+    gap: 20px; /* gap: Espaço entre os itens flexíveis */
+}
+
+.menu-lista a {
+    color: white;
+    text-decoration: none; /* Tira o sublinhado */
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px; /* Arredonda os cantos */
+    transition: background-color 0.3s; /* Suaviza a mudança de cor */
+}
+
+.menu-lista a:hover {
+    background-color: #34495e; /* Cor de fundo ao passar o mouse */
+}
+
+/* Container para limitar a largura do texto e centralizar na tela */
+.container-principal {
+    max-width: 800px;
+    margin: 40px auto; /* auto nas laterais centraliza blocos */
+    padding: 0 20px;
+}
+
+.post {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra leve */
+}
+
+.post h2 { margin-bottom: 1rem; color: #2c3e50; }
+.post p { line-height: 1.6; margin-bottom: 1.5rem; }
+
+.btn-leia-mais {
+    display: inline-block; /* Permite padding em links */
+    background-color: #3498db; /* Azul claro */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.btn-leia-mais:hover { background-color: #2980b9; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #bdc3c7;
+    margin-top: 40px;
+}

@@ -1,0 +1,158 @@
+/* Reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #ddd;
+    color: #333;
+}
+
+/* --- CABEÇALHO --- */
+.cabecalho { 
+    background-color: #b71c1c; /* Vermelho escuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    /* Borda inferior para separar do menu */
+    border-bottom: 5px solid #801313;
+}
+
+/* --- NAVEGAÇÃO (Sem Flexbox) --- */
+.navegacao { 
+    background-color: #333;
+    padding: 10px;
+    text-align: center; /* Centraliza os itens inline-block */
+}
+
+.navegacao ul {
+    list-style: none; /* Remove bolinhas */
+}
+
+.navegacao li {
+    /* TÉCNICA ANTIGA: Usar inline-block para colocar itens lado a lado */
+    display: inline-block; 
+    margin: 0 15px;
+}
+
+.navegacao a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 10px;
+}
+
+.navegacao a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+/* --- LAYOUT COM POSITION (O "Pulo do Gato") --- */
+
+.conteudo-wrapper {
+    /* Define este elemento como a âncora para os filhos absolutos */
+    position: relative; 
+    
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o site na tela */
+    background-color: white; /* Fundo branco para o conteúdo */
+    
+    /* IMPORTANTE: Cria um espaço vazio na direita de 320px */
+    /* É nesse espaço que a barra lateral vai entrar */
+    padding-right: 320px; 
+    
+    /* Garante que a altura do wrapper cubra o conteúdo */
+    min-height: 600px; 
+}
+
+.conteudo-principal {
+    /* Ocupa 100% do espaço restante (descontando o padding do wrapper) */
+    width: 100%; 
+    padding: 20px;
+}
+
+.barra-lateral { 
+    /* Remove do fluxo e joga para a direita */
+    position: absolute; 
+    top: 0;
+    right: 0;
+    
+    /* Define a largura para caber no padding do wrapper */
+    width: 300px; 
+    
+    /* Ocupa 100% da altura do wrapper */
+    height: 100%; 
+    
+    background-color: #f9f9f9; /* Fundo claro para diferenciar */
+    padding: 20px;
+    border-left: 5px solid #b71c1c; /* Detalhe visual separador */
+}
+
+/* --- RODAPÉ --- */
+.rodape { 
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    /* Limpa qualquer problema de layout anterior e fica abaixo */
+    position: relative; 
+    z-index: 10;
+}
+
+/* --- ESTILOS DOS COMPONENTES INTERNOS --- */
+
+/* Estilos dos artigos */
+article {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+article h2 { color: #b71c1c; margin-bottom: 10px; }
+article p { line-height: 1.6; margin-bottom: 10px; }
+
+/* Estilos do Aside (Widgets) */
+.barra-lateral h3 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.barra-lateral section {
+    margin-bottom: 30px; /* Espaço entre os widgets */
+}
+
+.banner-fake {
+    background-color: #ccc;
+    height: 100px;
+    /* Centralização vertical antiga (usando line-height) */
+    line-height: 100px; 
+    text-align: center;
+    color: #666;
+    font-weight: bold;
+}
+
+/* Inputs básicos para a newsletter */
+input[type="email"] { 
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 5px; 
+    border: 1px solid #ccc;
+}
+
+button { 
+    width: 100%; 
+    padding: 10px; 
+    background-color: #b71c1c; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #801313;
+}

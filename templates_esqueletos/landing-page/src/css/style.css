@@ -1,0 +1,84 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+    font-family: Arial, sans-serif; 
+    background-color: #fff;
+    color: #333;
+    /* Padding compensatório: É necessário dar espaço no corpo 
+       para que o conteúdo não fique escondido atrás dos elementos fixos */
+    padding-top: 70px; /* Altura do Header */
+    padding-left: 250px; /* Largura da Sidebar */
+}
+
+/* --- CABEÇALHO FIXO NO TOPO --- */
+.top-bar {
+    position: fixed; /* Fixa na tela */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura */
+    height: 70px; /* Altura definida */
+    background-color: #252525;
+    color: white;
+    padding: 0 20px;
+    display: flex; /* Flexbox para alinhar o texto verticalmente */
+    align-items: center;
+    z-index: 100; /* Garante que fique na frente de tudo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* --- BARRA LATERAL (SIDEBAR) FIXA NA ESQUERDA --- */
+.sidebar-fixa {
+    position: fixed; /* Fixa na tela */
+    top: 70px; /* Começa logo abaixo do cabeçalho */
+    left: 0;
+    width: 250px; /* Largura definida */
+    height: 100%; /* Ocupa até o fim da altura da tela */
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto; /* Se o menu for muito grande, cria rolagem só nele */
+}
+
+.sidebar-fixa h3 {
+    color: #555;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.sidebar-fixa ul {
+    list-style: none; /* Remove as bolinhas */
+}
+
+.sidebar-fixa li {
+    margin-bottom: 10px;
+}
+
+.sidebar-fixa a {
+    text-decoration: none;
+    color: #333;
+    display: block; /* Faz o link ocupar a linha toda */
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-fixa a:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.conteudo-rolavel {
+    padding: 40px; /* Espaço interno para o texto não grudar nas bordas */
+    max-width: 900px; /* Limita a largura para leitura confortável */
+}
+
+section {
+    margin-bottom: 50px; /* Espaço entre as seções */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+h2 { color: #0056b3; margin-bottom: 15px; }
+p { line-height: 1.6; margin-bottom: 15px; }
