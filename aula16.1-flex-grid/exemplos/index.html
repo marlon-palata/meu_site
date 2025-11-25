@@ -1,127 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Aula 16.1 - Completa</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Flexbox e Grid - Guia Completo</h1>
+      <h1>Flexbox e Grid - Guia Completo</h1>
     </header>
-
     <main>
-        <section>
-            <h2>1.1 a 1.7 - Revisão Básica Flexbox</h2>
-            <div class="flex-container" id="flex-basico"><div class="item">1</div><div class="item">2</div></div>
-            <div class="flex-container" id="flex-justify"><div class="item">1</div><div class="item">2</div></div>
-            <div class="flex-container" id="flex-align"><div class="item" style="height:50px">1</div><div class="item" style="height:100px">2</div></div>
-        </section>
+      <section>
+        <h2>1.1 a 1.7 - Revisão Básica Flexbox</h2>
+        <div class="flex-container" id="flex-basico">
+          <div class="item">1</div>
+          <div class="item">2</div>
+        </div>
+        <div class="flex-container" id="flex-justify">
+          <div class="item">1</div>
+          <div class="item">2</div>
+        </div>
+        <div class="flex-container" id="flex-align">
+          <div class="item" style="height: 50px">1</div>
+          <div class="item" style="height: 100px">2</div>
+        </div>
+      </section>
 
-        <section>
-            <h2>1.8. Ordem Visual (order)</h2>
-            <p>O item vermelho é o último no HTML, mas <code>order: -1</code> o coloca primeiro.</p>
-            <div class="flex-container" id="flex-order">
-                <div class="item">1</div>
-                <div class="item">2</div>
-                <div class="item item-invertido">3</div>
-            </div>
-        </section>
+      <section>
+        <h2>1.8. Ordem Visual (order)</h2>
+        <p>
+          O item vermelho é o último no HTML, mas <code>order: -1</code> o
+          coloca primeiro.
+        </p>
+        <div class="flex-container" id="flex-order">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item item-invertido">3</div>
+        </div>
+      </section>
 
-        <section>
-            <h2>1.9. Alinhamento Individual (align-self)</h2>
-            <p>O pai alinha no topo, o vermelho desce sozinho.</p>
-            <div class="flex-container" id="flex-align-self">
-                <div class="item">1</div>
-                <div class="item item-diferente">2</div>
-                <div class="item">3</div>
-            </div>
-        </section>
+      <section>
+        <h2>1.9. Alinhamento Individual (align-self)</h2>
+        <p>O pai alinha no topo, o vermelho desce sozinho.</p>
+        <div class="flex-container" id="flex-align-self">
+          <div class="item">1</div>
+          <div class="item item-diferente">2</div>
+          <div class="item">3</div>
+        </div>
+      </section>
 
-        <hr>
-        <h1>CSS Grid</h1>
+      <hr />
+      <h1>CSS Grid</h1>
 
-        <section>
-            <h2>2.1 a 2.4 - Básicos (Colunas, Repeat, Minmax)</h2>
-            <div class="grid-container" id="grid-basico"><div class="item-grid">1</div><div class="item-grid">2</div><div class="item-grid">3</div></div>
-            <div class="grid-container" id="grid-repeat"><div class="item-grid">1</div><div class="item-grid">2</div><div class="item-grid">3</div><div class="item-grid">4</div></div>
-        </section>
+      <section>
+        <h2>2.1 a 2.4 - Básicos (Colunas, Repeat, Minmax)</h2>
+        <div class="grid-container" id="grid-basico">
+          <div class="item-grid">1</div>
+          <div class="item-grid">2</div>
+          <div class="item-grid">3</div>
+        </div>
+        <div class="grid-container" id="grid-misto">
+          <div class="item-grid">1</div>
+          <div class="item-grid">2</div>
+          <div class="item-grid">3</div>
+          <div class="item-grid">4</div>
+        </div>
+        <div class="grid-container" id="grid-repeat">
+          <div class="item-grid">1</div>
+          <div class="item-grid">2</div>
+          <div class="item-grid">3</div>
+          <div class="item-grid">4</div>
+        </div>
+        <div class="grid-container" id="grid-minmax">
+          <div class="item-grid">1</div>
+          <div class="item-grid">2</div>
+          <div class="item-grid">3</div>
+          <div class="item-grid">4</div>
+        </div>
+      </section>
 
-        <section>
-            <h2>2.5. Grade Implícita e Fluxo</h2>
-            <div class="grid-container" id="grid-implicit">
-                <div class="item-grid">1</div><div class="item-grid">2</div><div class="item-grid">3</div>
-                <div class="item-grid">4</div><div class="item-grid">5 (Auto)</div>
-            </div>
-        </section>
+      <section>
+        <h2>2.5. Grade Implícita e Fluxo</h2>
+        <div class="grid-container" id="grid-implicit">
+          <div class="item-grid">1</div>
+          <div class="item-grid">2</div>
+          <div class="item-grid">3</div>
+          <div class="item-grid">4</div>
+          <div class="item-grid">5 (Auto)</div>
+        </div>
+      </section>
 
-        <section>
-            <h2>2.6 e 2.7 - Alinhamentos (Items e Content)</h2>
-            <div class="grid-container" id="grid-alignment-items">
-                <div class="item-grid">Centro</div><div class="item-grid">Centro</div>
-            </div>
-            <div class="grid-container" id="grid-alignment-content">
-                <div class="item-grid">1</div><div class="item-grid">2</div>
-                <div class="item-grid">3</div><div class="item-grid">4</div>
-            </div>
-        </section>
+      <section>
+        <h2>2.6 e 2.7 - Alinhamentos (Items e Content)</h2>
+        <div class="grid-container" id="grid-alignment-items">
+          <div class="item-grid">Centro</div>
+          <div class="item-grid">Centro</div>
+        </div>
+        <div class="grid-container" id="grid-alignment-content">
+          <div class="item-grid">1</div>
+          <div class="item-grid">2</div>
+          <div class="item-grid">3</div>
+          <div class="item-grid">4</div>
+        </div>
+      </section>
 
-        <section>
-            <h2>2.8. Posicionamento por Linhas (Start / End)</h2>
-            <p>Item vermelho vai da linha 1 até a 3 (<code>grid-column: 1 / 3</code>).</p>
-            <div class="grid-container" id="grid-linhas">
-                <div class="item-grid item-linha-especifica">1 a 3</div>
-                <div class="item-grid">2</div>
-                <div class="item-grid">3</div>
-            </div>
-        </section>
+      <section>
+        <h2>2.8. Posicionamento por Linhas (Start / End)</h2>
+        <p>
+          Item vermelho vai da linha 1 até a 3 (<code>grid-column: 1 / 3</code
+          >).
+        </p>
+        <div class="grid-container" id="grid-linhas">
+          <div class="item-grid item-linha-especifica">1 a 3</div>
+          <div class="item-grid">2</div>
+          <div class="item-grid">3</div>
+        </div>
+      </section>
 
-        <section>
-            <h2>2.9. Posicionamento com Span</h2>
-            <p>Roxo estica 2 colunas, Roxo escuro estica 2 linhas.</p>
-            <div class="grid-container" id="grid-span">
-                <div class="item-grid item-span">Span 2 Col</div>
-                <div class="item-grid">2</div>
-                <div class="item-grid">3</div>
-                <div class="item-grid item-span-row">Span 2 Row</div>
-                <div class="item-grid">5</div>
-                <div class="item-grid">6</div>
-            </div>
-        </section>
+      <section>
+        <h2>2.9. Posicionamento com Span</h2>
+        <p>Roxo estica 2 colunas, Roxo escuro estica 2 linhas.</p>
+        <div class="grid-container" id="grid-span">
+          <div class="item-grid item-span">Span 2 Col</div>
+          <div class="item-grid">2</div>
+          <div class="item-grid">3</div>
+          <div class="item-grid item-span-row">Span 2 Row</div>
+          <div class="item-grid">5</div>
+          <div class="item-grid">6</div>
+        </div>
+      </section>
 
-        <section>
-            <h2>2.10. Linhas Negativas (-1)</h2>
-            <p>Item escuro vai de 1 até -1 (ocupa tudo independente do nº de colunas).</p>
-            <div class="grid-container" id="grid-negativo">
-                <div class="item-grid item-negativo">Full Width (1 / -1)</div>
-                <div class="item-grid">2</div>
-                <div class="item-grid">3</div>
-                <div class="item-grid">4</div>
-            </div>
-        </section>
+      <section>
+        <h2>2.10. Linhas Negativas (-1)</h2>
+        <p>
+          Item escuro vai de 1 até -1 (ocupa tudo independente do nº de
+          colunas).
+        </p>
+        <div class="grid-container" id="grid-negativo">
+          <div class="item-grid item-negativo">Full Width (1 / -1)</div>
+          <div class="item-grid">2</div>
+          <div class="item-grid">3</div>
+          <div class="item-grid">4</div>
+        </div>
+      </section>
 
-        <section>
-            <h2>2.11. Alinhamento Individual (self)</h2>
-            <div class="grid-container" id="grid-item-alignment">
-                <div class="item-grid">Normal</div>
-                <div class="item-grid item-diferente">Diferente</div>
-                <div class="item-grid">Normal</div>
-                <div class="item-grid">Normal</div>
-            </div>
-        </section>
+      <section>
+        <h2>2.11. Alinhamento Individual (self)</h2>
+        <div class="grid-container" id="grid-item-alignment">
+          <div class="item-grid">Normal</div>
+          <div class="item-grid item-diferente">Diferente</div>
+          <div class="item-grid">Normal</div>
+          <div class="item-grid">Normal</div>
+        </div>
+      </section>
 
-        <section>
-            <h2>2.12. Grid Template Areas</h2>
-            <div class="grid-container" id="grid-areas">
-                <header class="item-grid area-header">Header</header>
-                <main class="item-grid area-main">Main</main>
-                <aside class="item-grid area-aside">Aside</aside>
-                <footer class="item-grid area-footer">Footer</footer>
-            </div>
-        </section>
+      <section>
+        <h2>2.12. Grid Template Areas</h2>
+        <div class="grid-container" id="grid-areas">
+          <header class="item-grid area-header">Header</header>
+          <main class="item-grid area-main">Main</main>
+          <aside class="item-grid area-aside">Aside</aside>
+          <footer class="item-grid area-footer">Footer</footer>
+        </div>
+      </section>
     </main>
 
     <footer>Aula 16.1 - Completa</footer>
-</body>
+  </body>
 </html>
