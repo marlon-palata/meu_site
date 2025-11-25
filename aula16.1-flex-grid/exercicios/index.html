@@ -1,50 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Exercício - Santo Graal Moderno</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <h1>Meu Site Incrível (Grid + Flex)</h1>
+<head>
+    <meta charset="UTF-8">
+    <title>Santo Graal Turbo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Meu Site</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li class="invertido"><a href="#">Contato (Order -1)</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav class="site-nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
-
-    <main class="main-content">
-      <h2>Conteúdo Principal</h2>
-      <p>
-        Este layout foi construído com CSS Grid. Observe que não precisamos de
-        nenhuma div "wrapper" extra para segurar o conteúdo e a barra lateral.
-      </p>
-      <p>
-        O Grid cuida das colunas e linhas macro, enquanto o Flexbox cuida do
-        alinhamento do menu.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia
-        odio vitae vestibulum vestibulum.
-      </p>
-    </main>
-
     <aside class="sidebar">
-      <h3>Barra Lateral</h3>
-      <ul>
-        <li>Link Importante 1</li>
-        <li>Link Importante 2</li>
-        <li>Publicidade</li>
-      </ul>
+        <h3>Menu Lateral</h3>
+        <p>Links extras...</p>
     </aside>
 
-    <footer class="site-footer">
-      <p>&copy; 2025 - Todos os direitos reservados.</p>
+    <main class="content">
+        <h2>Galeria de Conteúdo</h2>
+        <div class="grid-cards">
+            <div class="card destaque">1 (Destaque)</div>
+            <div class="card">2</div>
+            <div class="card">3</div>
+            <div class="card">4</div>
+            <div class="card">5</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Footer</p>
+        <span class="sobe-topo">Voltar ao Topo</span>
     </footer>
-  </body>
+</body>
 </html>
