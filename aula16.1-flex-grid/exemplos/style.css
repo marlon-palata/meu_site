@@ -145,15 +145,42 @@ section {
   gap: 10px;
 }
 
-/* Está errado, corrigir */
 /* 2.5. Grade Implícita */
-#grid-implicit {
+#grid-implicit-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* Definimos EXPLICITAMENTE 2 colunas e 2 linhas fixas */
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 100px 100px;
   gap: 10px;
-  grid-auto-rows: 100px;
-  grid-auto-flow: dense;
+
+  /* --- Configuração da Grade Implícita --- */
+  /* O padrão já é 'row', então o item 5 vai criar uma nova LINHA. */
+  /* grid-auto-flow: row; (não precisa escrever, é o padrão) */
+
+  /* Definimos que essa nova linha automática terá 50px de altura */
+  grid-auto-rows: 50px;
 }
+
+.item-extra {
+    background-color: #e74c3c; /* Cor diferente para destacar */
+}
+
+#grid-implicit-column {
+  display: grid;
+  /* Definimos EXPLICITAMENTE 2 colunas e 2 linhas fixas */
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+
+  /* --- Configuração da Grade Implícita --- */
+  /* MUDANÇA: Se faltar espaço, crie uma nova COLUNA à direita */
+  grid-auto-flow: column;
+
+  /* Definimos que essa nova coluna automática terá 80px de largura */
+  grid-auto-columns: 80px;
+}
+
+
 
 /* 2.6 e 2.7 Alinhamentos */
 #grid-alignment-items {
