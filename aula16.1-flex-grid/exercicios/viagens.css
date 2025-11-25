@@ -1,0 +1,234 @@
+/* =========================================
+   RESET E ESTILOS GERAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+
+    /* ESTRUTURA GRID PRINCIPAL */
+    display: grid;
+    min-height: 100vh;
+    /* Colunas: Sidebar fixa 220px, duas colunas flexíveis para conteúdo */
+    grid-template-columns: 220px 1fr 1fr;
+    /* Linhas: Topo e base automáticos, miolo estica */
+    grid-template-rows: auto 1fr auto;
+    
+    /* MAPA DO LAYOUT */
+    grid-template-areas:
+        "cabecalho cabecalho cabecalho"
+        "lateral   principal principal"
+        "rodape    rodape    rodape";
+    
+    gap: 20px; /* Espaço entre as áreas principais */
+}
+
+/* Títulos com fonte diferente */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+
+/* =========================================
+   ÁREAS E ESTILOS BASE
+   ========================================= */
+.header {
+    grid-area: cabecalho;
+    background-color: #0a2342; /* Azul marinho */
+    color: white;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10; /* Fica sobre os outros elementos */
+}
+
+.sidebar {
+    grid-area: lateral;
+    background-color: #fff;
+    padding: 30px 20px;
+    border-right: 1px solid #e1e4e8;
+    /* PASSO D: Alinhamento Individual - Não estica */
+    align-self: start;
+}
+
+.content {
+    grid-area: principal;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.footer {
+    grid-area: rodape;
+    background-color: #0a2342;
+    color: #a0b1c5;
+    padding: 25px 30px;
+}
+
+
+/* =========================================
+   HEADER E MENU (FLEXBOX)
+   ========================================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo { font-size: 1.8rem; color: #2caeba; /* Ciano */ }
+
+.menu {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza se quebrar linha */
+}
+
+.menu a {
+    color: #e1e4e8;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Evita quebra de texto no botão */
+    display: block;
+    padding: 10px 18px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+/* DESAFIO ORDER: "Solicitar Orçamento" aparece primeiro */
+.destaque-contato { order: -1; }
+.destaque-contato a {
+    background-color: #2caeba;
+    color: white;
+    box-shadow: 0 2px 5px rgba(44, 174, 186, 0.3);
+}
+.destaque-contato a:hover { background-color: #259aa5; }
+
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+.sidebar h3 {
+    font-size: 1.1rem;
+    color: #0a2342;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    border-bottom: 2px solid #2caeba;
+    display: inline-block;
+}
+.sidebar h3:first-child { margin-top: 0; }
+
+.sidebar li { margin-bottom: 12px; }
+.sidebar a {
+    color: #555;
+    font-size: 0.95rem;
+    display: flex; align-items: center;
+    transition: color 0.2s;
+}
+.sidebar a:before {
+    content: "•"; color: #2caeba; margin-right: 10px; font-size: 1.2rem;
+}
+.sidebar a:hover { color: #2caeba; }
+
+
+/* =========================================
+   CONTENT E GALERIA (GRID INTELIGENTE)
+   ========================================= */
+.content h2 { font-size: 2rem; color: #0a2342; margin-bottom: 10px; }
+.intro-text { margin-bottom: 30px; color: #666; max-width: 800px; }
+
+/* PASSO E: O Grid Mágico */
+.grid-cards {
+    display: grid;
+    gap: 25px;
+    /* A FÓRMULA DA RESPONSIVIDADE AUTOMÁTICA:
+       Cria colunas que têm no mínimo 220px.
+       Elas se ajustam e quebram linha sozinhas! */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Estilo dos Cards com Imagem de Fundo */
+.card {
+    height: 300px; /* Altura fixa para os cards */
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Para posicionar o conteúdo sobre a imagem */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Overlay escuro e conteúdo do card */
+.card-content {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 20px;
+    color: white;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    height: 100%;
+}
+
+.card h3 {
+    font-size: 1.4rem; margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.btn-card {
+    align-self: start;
+    background-color: #2caeba;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem; font-weight: bold;
+    transition: background-color 0.2s;
+}
+.btn-card:hover { background-color: #259aa5; }
+
+
+/* =========================================
+   FOOTER (FLEXBOX)
+   ========================================= */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-info p { margin-bottom: 5px; font-size: 0.9rem; }
+
+/* DESAFIO ALIGN-SELF */
+.btn-topo {
+    background-color: rgba(255,255,255,0.1);
+    color: #e1e4e8;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s;
+    /* O botão fica no topo do container do footer */
+    align-self: start;
+}
+.btn-topo:hover { background-color: #2caeba; color: white; }
