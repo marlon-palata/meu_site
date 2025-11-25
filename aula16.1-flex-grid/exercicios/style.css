@@ -1,117 +1,96 @@
 /* Reset Básico */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: sans-serif; background-color: #eee; }
 
-/* LAYOUT MACRO (CSS GRID) 
-   Aplicamos o Grid no body porque ele é o pai direto de 
-   header, nav, main, aside e footer.
-*/
+/* --- PASSO A: ESTRUTURA GRID (AREAS) --- */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
-
-  /* Ativa o Grid */
-  display: grid;
-
-  /* Define a altura mínima da tela para o rodapé não subir se tiver pouco conteúdo */
-  min-height: 100vh;
-
-  /* DEFININDO AS COLUNAS E LINHAS:
-       Colunas: 3 partes para conteúdo, 1 parte para lateral.
-       Linhas: Altura automática para topo, meio ocupa o resto (1fr), altura automática para rodapé.
-    */
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: auto auto 1fr auto;
-
-  /* DEFININDO AS ÁREAS (O MAPA):
-       Aqui desenhamos como o site deve se parecer.
-    */
-  grid-template-areas:
-    "header header"
-    "nav    nav"
-    "main   aside"
-    "footer footer";
-
-  /* Espaçamento entre os blocos do grid */
-  gap: 10px;
+    display: grid;
+    min-height: 100vh;
+    /* Coluna 1 fixa, Coluna 2 elástica, Coluna 3 percentual */
+    grid-template-columns: 200px 1fr 15%;
+    grid-template-rows: auto 1fr auto;
+    /* Mapa do Layout */
+    grid-template-areas:
+        "cabecalho cabecalho cabecalho"
+        "lateral   principal principal"
+        "rodape    rodape    rodape";
+    gap: 10px;
 }
 
-/* --- Conectando os elementos HTML às Áreas do Grid --- */
+/* Conectando as Áreas */
+.header  { grid-area: cabecalho; background-color: #2c3e50; color: white; padding: 20px; }
+.sidebar { grid-area: lateral;   background-color: #34495e; color: white; padding: 20px; }
+.content { grid-area: principal; background-color: #ecf0f1; padding: 20px; }
+.footer  { grid-area: rodape;    background-color: #2c3e50; color: white; padding: 30px; }
 
-.site-header {
-  grid-area: header;
-  background-color: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 2rem;
+/* --- PASSO B: FLEXBOX AVANÇADO (HEADER) --- */
+.header {
+    display: flex;
+    justify-content: space-between; /* H1 na esquerda, Nav na direita */
+    align-items: center;
 }
 
-.site-nav {
-  grid-area: nav;
-  background-color: #34495e;
-  padding: 10px;
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
 }
 
-.main-content {
-  grid-area: main;
-  background-color: white;
-  padding: 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+.menu a { color: white; text-decoration: none; font-weight: bold; }
+
+/* Desafio ORDER: Contato aparece primeiro */
+.invertido {
+    order: -1;
+    border: 1px solid yellow; /* Destaque visual */
+    padding: 5px;
+    border-radius: 4px;
 }
 
+/* --- PASSO C: GRID INTERNO (SPAN) --- */
+.grid-cards {
+    display: grid;
+    /* 3 Colunas iguais */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    display: flex; justify-content: center; align-items: center; /* Centraliza texto do card */
+    font-size: 1.5rem;
+    border-radius: 8px;
+}
+
+/* Desafio SPAN: Ocupa 2 colunas e 2 linhas */
+.destaque {
+    grid-column: span 2;
+    grid-row: span 2;
+    background-color: #e74c3c;
+}
+
+/* --- PASSO D: ALINHAMENTOS INDIVIDUAIS (SELF) --- */
+
+/* Sidebar não estica (padrão do grid é stretch), ela fica no topo */
 .sidebar {
-  grid-area: aside;
-  background-color: #e0e0e0;
-  padding: 1.5rem;
-  border-left: 4px solid #2c3e50;
+    align-self: start; 
+    height: 50%; /* Só para visualizar que ela não ocupa tudo */
 }
 
-.site-footer {
-  grid-area: footer;
-  background-color: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 1.5rem;
+/* Footer Flexbox */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinhamento padrão vertical: centro */
 }
 
-/* LAYOUT MICRO (FLEXBOX)
-   Usamos Flexbox dentro do menu para alinhar os links.
-*/
-.site-nav ul {
-  display: flex; /* Transforma a lista em linha */
-  justify-content: center; /* Centraliza os itens */
-  list-style: none; /* Remove bolinhas */
-  gap: 20px; /* Espaço entre os links */
-}
-
-.site-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 5px 10px;
-  transition: background-color 0.3s;
-}
-
-.site-nav a:hover {
-  background-color: #2c3e50;
-  border-radius: 4px;
-}
-
-/* Estilos extras para a sidebar */
-.sidebar h3 {
-  margin-bottom: 1rem;
-  color: #333;
-  border-bottom: 2px solid #ccc;
-}
-
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar li {
-  margin-bottom: 0.5rem;
+/* Item específico desalinhado no Flexbox */
+.sobe-topo {
+    background-color: #e67e22;
+    padding: 5px 10px;
+    cursor: pointer;
+    /* Desafio: Este item ignora o center e vai para o topo do footer */
+    align-self: flex-start; 
 }
